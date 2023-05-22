@@ -1,18 +1,16 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class PossibleCombinations extends UserInformationScanner {
+public class PossibleCombinations extends GUI {
     public static List<List<Double>> possibleCombinationsCalculator(List<List<Double>> combinations, double desired_average) {
         List<List<Double>> possibleCombinations = new ArrayList<>();
         possibleCombinationsHelper(possibleCombinations, combinations);
         return possibleCombinations;
     }
     
-    double current_total_grade = current_average*total_courses_passed;
-
     public static void possibleCombinationsHelper(List<List<Double>> possibleCombinations, List<List<Double>> combinations) {
     
-        double current_total_grade = current_average*total_courses_passed; 
+        // double current_total_grade = current_average*total_courses_passed; 
         double compute_average_helper = desired_average * (total_courses_passed + courses_left) - current_total_grade;
         List<List<Double>> combinationsWithAverage = new ArrayList<>(combinations);
         for (List<Double> combination : combinationsWithAverage) {
